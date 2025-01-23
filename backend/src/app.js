@@ -13,16 +13,21 @@ const statsRoutes = require('./routes/stats');
 const app = express();
 
 
-app.use(cors({
-  origin: process.env.CLIENT_URL,
-  credentials: true
-}));
 
 
 app.get('/', (req, res) => {
   res.status(200).json({ message: 'Backend App is running Sucessfully!' });
 });
 
+
+
+app.use(
+  cors({
+    origin: "https://tm-sigma-five.vercel.app", 
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true, 
+  })
+);
 
 
 
