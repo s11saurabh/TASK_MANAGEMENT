@@ -19,6 +19,13 @@ app.use(cors({
 }));
 
 
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'Backend App is running Sucessfully!' });
+});
+
+
+
+
 app.use(morgan('dev'));
 app.use(express.json());
 
